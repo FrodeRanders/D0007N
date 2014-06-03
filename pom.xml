@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ltu.d0007n</groupId>
+    <artifactId>example-code</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <name>D0007N example code</name>
+    <inceptionYear>2014</inceptionYear>
+
+    <modules>
+        <module>network/websucker</module>
+        <module>network/a-smarter-websucker</module>
+        <module>database/jdbc</module>
+        <module>webservice/java-first</module>
+        <module>database/testbench</module>
+    </modules>
+</project>
+
