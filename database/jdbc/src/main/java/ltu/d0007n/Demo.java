@@ -14,7 +14,7 @@ public class Demo {
     public static final String APPLICATION_NAME = "Database-access";
 
     // For simplicity reasons, I choose the same database name as the user name
-    public static final String DB_NAME = "d0007n";
+    public static final String DB_NAME = "d0007n-db";
     public static final String DB_USER = "d0007n";
     public static final String DB_PASSWORD = "d0007n";
 

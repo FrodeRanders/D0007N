@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 public class EventController {
     public static final String APPLICATION_NAME = "Eventmanager"; // since Facebook was already taken :)
     public static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDataSource";
-    public static final String DB_NAME = "testbench-db";
+    public static final String DB_NAME = "d0007n-db";
 
     private static final String GET_ALL_EVENTS =
             "SELECT eventid, eventname, eventdate " +
