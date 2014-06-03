@@ -92,7 +92,7 @@ public class MediaServiceTest extends TestCase {
         return client;
     }
     /**
-     * Rigourous Test :-)
+     * Testing the MediaService web service
      */
     public void testApp()
     {
@@ -102,18 +102,22 @@ public class MediaServiceTest extends TestCase {
         // Create (test) client
         MediaService client = createClientJaxWsStyle();
 
+        // Get service version
         String version = client.getVersion();
-        System.out.println("Service version: " + version);
+        System.out.println("Communicating with MediaService having version " + version);
 
+        // Get a media file
         MediaFile file = client.getMediaFile("42");
         DataHandler dh = file.fileData;
         try (InputStream is = dh.getInputStream()) {
+            System.out.println("Saving received media file to disk...");
             File outputFile = new File(file.fileName);
             if (outputFile.exists()) {
                 outputFile.delete();
             }
 
             ltu.d0007n.internal.FileIO.writeToFile(is, outputFile);
+            System.out.println("Done");
         }
         catch (IOException ioe) {
             String info = "Could not retrieve media file: ";
