@@ -17,6 +17,7 @@
         <module>database/jdbc</module>
         <module>webservice/java-first</module>
         <module>database/testbench</module>
+        <module>websockets</module>
     </modules>
 </project>
 
