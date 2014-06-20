@@ -34,15 +34,17 @@ public class MediaServiceServerEndpoint {
     public void onOpen(Session session) {
         System.out.println("Server connected ... " + session.getId() + " [" + (session.isOpen() ? "OPEN" : "CLOSE") + "]");
 
-        Thread t = new ServiceThread(session, "onOpen@server");
+        Thread t = new ServiceThread(session, "onOpen@server", "replace");
         t.run();
     }
 
     @OnMessage
     public String onMessage(String message, Session session) {
+        System.out.print("Server got: ");
         if (null != message && message.length() > 0) {
-            System.out.println("Server got: " + message);
+            System.out.print(message);
         }
+        System.out.println();
         return null;
     }
 
@@ -68,10 +70,12 @@ public class MediaServiceServerEndpoint {
     public class ServiceThread extends Thread {
         private final Session session;
         private final String requestedBy;
+        private final String event;
 
-        public ServiceThread(Session session, final String requestedBy) {
+        public ServiceThread(Session session, final String requestedBy, final String event) {
             this.session = session;
             this.requestedBy = requestedBy;
+            this.event = event;
         }
 
         public void run() {
@@ -86,7 +90,7 @@ public class MediaServiceServerEndpoint {
                 System.out.println("Server sending on session " + session.getId() + " [" + (session.isOpen() ? "OPEN" : "CLOSED") + "]");
 
                 if (session.isOpen()) {
-                    MediaEvent msg = new MediaEvent("list_update", generateTestData(i, requestedBy));
+                    MediaEvent msg = new MediaEvent(event, generateTestData(i, requestedBy));
 
                     if (false) {
                         session.getAsyncRemote().sendText(gson.toJson(msg));

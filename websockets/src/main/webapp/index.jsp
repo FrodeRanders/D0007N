@@ -16,32 +16,39 @@
         </h2>
     </noscript>
 
-    <h2>Media files:</h2>
+    <h2>Data</h2>
+    <table id="table1">
+        <thead>
+            <td style="text-decoration: blue; font: bold">id</td>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 
     <script type="application/javascript">
         server = new ServerEventsDispatcher("ws://localhost:8080/websockets-example/websocket/mediaservice");
 
-        server.bind('list_update', function(eventData){
-            console.log("* got " + eventData.length + " elements");
+        server.bind('replace', function(eventData){
+            console.log("* replacing " + eventData.length + " elements");
 
             // Refer to http://stackoverflow.com/a/13130467 for details on how to
             // update, add, and remove entries based on received data
-            var p = d3.select(document.body).selectAll("p").data(eventData);
+            var tr = d3.select("#table1 tbody").selectAll("tr").data(eventData);
 
             // update
-            p.attr("class", "update");
 
             // enter
-            p.enter().append("p")
-                     .attr("class", "enter")
-                     .attr("id", function(d) { return d.id });
+            tr.enter().append("tr")
+                    .attr("id", function(d) { return d.id });
 
             // update + enter
-            p.text(function(d) { return d.id });
+            tr.text(function(d) { return d.id });
 
             // exit
-            p.exit().remove();
-         });
+            tr.exit().remove();
+
+            server.send('replace', 'acknowledge');
+        });
     </script>
 
 </body>
