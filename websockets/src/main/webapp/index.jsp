@@ -46,10 +46,13 @@
 
             // exit
             tr.exit().remove();
-
-            server.send('replace', 'acknowledge');
         });
-    </script>
 
+        server.bind('open', function() {
+            // Connection open, so we can now send data to the server
+            server.send("event", "message");
+        });
+  
+    </script>
 </body>
 </html>
