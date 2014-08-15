@@ -38,8 +38,7 @@
             // update
 
             // enter
-            tr.enter().append("tr")
-                    .attr("id", function(d) { return d.id });
+            tr.enter().append("tr").attr("id", function(d) { return d.id });
 
             // update + enter
             tr.text(function(d) { return d.id });
@@ -49,10 +48,9 @@
         });
 
         server.bind('open', function() {
-            // Connection open, so we can now send data to the server
-            server.send("event", "message");
+            // Connection open, so we can now send some initial data to the server
+            server.send("greetings", "nice to meet you Server");
         });
-  
     </script>
 </body>
 </html>
