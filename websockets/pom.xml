@@ -15,7 +15,7 @@
         <gson.version>2.3</gson.version>
         <junit.version>4.8.2</junit.version>
         <javax.servlet.version>3.1.0</javax.servlet.version>
-        <tomcat.version>8.0.9</tomcat.version>
+        <tomcat.version>8.0.12</tomcat.version>
         <websocket.version>1.1</websocket.version>
     </properties>
 
@@ -44,30 +44,23 @@
         <dependency>
             <groupId>org.glassfish.tyrus</groupId>
             <artifactId>tyrus-server</artifactId>
-            <version>1.1</version> 
+            <version>1.8.2</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.glassfish.tyrus</groupId>
             <artifactId>tyrus-client</artifactId>
-            <version>1.1</version>
+            <version>1.8.2</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.glassfish.tyrus</groupId>
-            <artifactId>tyrus-container-grizzly</artifactId>
-            <version>1.1</version>
+            <artifactId>tyrus-container-grizzly-server</artifactId>
+            <version>1.8.2</version>
             <scope>test</scope>
         </dependency>
-
-        <!--<dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${javax.servlet.version}</version>
-            <scope>provided</scope>
-        </dependency>-->
 
         <dependency>
             <groupId>junit</groupId>

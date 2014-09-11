@@ -1,18 +1,15 @@
 package ltu.d0007n;
 
-import com.google.gson.Gson;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-//import org.glassfish.tyrus.core.websocket.ContainerProvider;
 import org.glassfish.tyrus.server.Server;
 
 import javax.websocket.ContainerProvider;
 import javax.websocket.WebSocketContainer;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Unit test for web service
@@ -41,7 +38,9 @@ public class WebSocketTest extends TestCase {
     private Server createServer() {
 
         try {
-            Server server = new Server("localhost", 8081, "/test", MediaServiceServerEndpoint.class);
+            Map<String, Object> properties = new HashMap<>();
+
+            Server server = new Server("localhost", 8081, "/test", properties, MediaServiceServerEndpoint.class);
             server.start();
             return server;
 
