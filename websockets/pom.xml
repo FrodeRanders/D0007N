@@ -33,12 +33,6 @@
             <version>${gson.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-catalina</artifactId>
-            <version>${tomcat.version}</version>
-            <scope>provided</scope>
-        </dependency>
 
         <!-- Setting up a WebSocket server for test -->
         <dependency>
