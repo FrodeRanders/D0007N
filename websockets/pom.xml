@@ -38,21 +38,21 @@
         <dependency>
             <groupId>org.glassfish.tyrus</groupId>
             <artifactId>tyrus-server</artifactId>
-            <version>1.8.2</version>
+            <version>1.8.3</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.glassfish.tyrus</groupId>
             <artifactId>tyrus-client</artifactId>
-            <version>1.8.2</version>
+            <version>1.8.3</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.glassfish.tyrus</groupId>
             <artifactId>tyrus-container-grizzly-server</artifactId>
-            <version>1.8.2</version>
+            <version>1.8.3</version>
             <scope>test</scope>
         </dependency>
 
