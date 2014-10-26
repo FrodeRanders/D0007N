@@ -10,7 +10,7 @@
     <name>java-first-service</name>
 
     <properties>
-	<cxf.version>3.0.1</cxf.version>
+	<cxf.version>3.0.2</cxf.version>
 	<spring.version>4.1.1.RELEASE</spring.version>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -63,7 +63,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.12-beta-2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
